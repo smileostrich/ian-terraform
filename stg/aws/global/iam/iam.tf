@@ -6,7 +6,7 @@ locals {
     }
   }
   programmatic_users = [
-    "terraform_cloud"
+    "terraform-cloud"
   ]
 }
 
