@@ -1,4 +1,4 @@
-# # terraform tutorial + 서적 + 강의 참고
+# # terraform tutorial + 서적(terraform up & running) + 강의 참고
 terraform {
   required_version = "= 0.13.5"
   

@@ -1,6 +1,6 @@
 locals {
   sysadmins = {
-    ilmin = {
+    happyostrich = {
       name       = "문일민"
       keybase_id = "happyostrich"
     }
