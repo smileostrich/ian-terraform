@@ -4,10 +4,10 @@ locals {
       name       = "문일민"
       keybase_id = "happyostrich"
     }
-    testuser1 = {
-      name       = "테스트유저1"
-      keybase_id = "user_test1"
-    }
+    # testuser1 = {
+    #   name       = "테스트유저1"
+    #   keybase_id = "user_test1"
+    # }
   }
 }
 
