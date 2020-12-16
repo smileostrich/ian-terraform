@@ -4,11 +4,10 @@ locals {
       name       = "문일민"
       keybase_id = "happyostrich"
     }
-    # testuser1 = {
-    #   name       = "테스트유저1"
-    #   keybase_id = "user_test1"
-    # }
   }
+  programmatic_users = [
+    "terraform_cloud"
+  ]
 }
 
 resource "aws_iam_account_password_policy" "strict" {
@@ -16,6 +15,9 @@ resource "aws_iam_account_password_policy" "strict" {
   minimum_password_length        = 14
 }
 
+#
+# sysadmins
+#
 resource "aws_iam_group" "sysadmins" {
   name = "sysadmins"
   path = "/sysadmins/"
@@ -25,7 +27,10 @@ resource "aws_iam_group_policy_attachment" "sysadmins" {
   group      = aws_iam_group.sysadmins.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
-
+resource "aws_iam_group_policy_attachment" "admin_mfa" {
+  group      = aws_iam_group.admin.name
+  policy_arn = aws_iam_policy.force_mfa.arn
+}
 resource "aws_iam_user" "sysadmins" {
   for_each = local.sysadmins
 
@@ -72,41 +77,24 @@ locals {
 }
 
 
-
-
-
 #
 # IAM Users
 #
-# resource "aws_iam_user" "programmatic_users" {
-#   for_each = toset(local.programmatic_users)
-#   name     = each.key
-# }
+resource "aws_iam_user" "programmatic_users" {
+  for_each = toset(local.programmatic_users)
+  name     = each.key
+}
 
-# resource "aws_iam_user_policy_attachment" "terraform_cloud" {
-#   user       = "terraform-cloud"
-#   policy_arn = aws_iam_policy.terraform_cloud.arn
-# }
+resource "aws_iam_user_policy_attachment" "terraform_cloud" {
+  user       = "terraform-cloud"
+  policy_arn = aws_iam_policy.terraform_cloud.arn
+}
 
 
 
 #
 # IAM Groups
 #
-# resource "aws_iam_group" "sysadmins" {
-#   name = "sysadmins"
-#   path = "/sysadmins/"
-# }
-# resource "aws_iam_group_policy_attachment" "admin_permission" {
-#   group      = aws_iam_group.admin.name
-#   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess" # AWS managed policy
-# }
-
-# resource "aws_iam_group_policy_attachment" "admin_mfa" {
-#   group      = aws_iam_group.admin.name
-#   policy_arn = aws_iam_policy.force_mfa.arn
-# }
-
 # resource "aws_iam_group" "readonly" {
 #   name = "ReadOnly"
 # }
