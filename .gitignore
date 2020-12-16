@@ -3,3 +3,6 @@
 *.tfstate
 *.tfstate.backup
 *.tfstate.*.backup
+~
+.terraform.d/.*
+terraform.d/*
