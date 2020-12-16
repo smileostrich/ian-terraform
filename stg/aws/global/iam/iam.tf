@@ -94,22 +94,22 @@ resource "aws_iam_user_policy_attachment" "terraform_cloud" {
 #
 # IAM Roles
 #
-# resource "aws_iam_role" "ian_homepage" {
-#   name               = "ian-homepage"
-#   description        = "Allows EC2 instances to call AWS services on your behalf."
-#   assume_role_policy = data.aws_iam_policy_document.instance_assume_role.json
-# }
+resource "aws_iam_role" "ian_homepage" {
+  name               = "ian-homepage"
+  description        = "Allows EC2 instances to call AWS services on your behalf."
+  assume_role_policy = data.aws_iam_policy_document.instance_assume_role.json
+}
 
-# data "aws_iam_policy_document" "instance_assume_role" {
-#   statement {
-#     actions = ["sts:AssumeRole"]
+data "aws_iam_policy_document" "instance_assume_role" {
+  statement {
+    actions = ["sts:AssumeRole"]
 
-#     principals {
-#       type        = "Service"
-#       identifiers = ["ec2.amazonaws.com"]
-#     }
-#   }
-# }
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+}
 
 # resource "aws_iam_instance_profile" "ian_homepage" {
 #   name = "ian-homepage"
