@@ -66,7 +66,7 @@ resource "aws_iam_access_key" "sysadmins" {
 }
 
 output "iam_secrets" {
-  value = [aws_iam_user_login_profile.sysadmins.*.encrypted_password]
+  value = ["${aws_iam_user_login_profile.sysadmins.*.encrypted_password}"]
 }
 # locals {
 #   iam_secrets = {
