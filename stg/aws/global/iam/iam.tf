@@ -28,7 +28,7 @@ resource "aws_iam_group_policy_attachment" "sysadmins" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 resource "aws_iam_group_policy_attachment" "admin_mfa" {
-  group      = aws_iam_group.admin.name
+  group      = aws_iam_group.sysadmins.name
   policy_arn = aws_iam_policy.force_mfa.arn
 }
 resource "aws_iam_user" "sysadmins" {
