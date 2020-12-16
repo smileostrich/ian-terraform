@@ -1,13 +1,13 @@
 locals {
+  programmatic_users = [
+    "terraform-cloud",
+  ]
   sysadmins = {
     happyostrich = {
       name       = "문일민"
       keybase_id = "happyostrich"
     }
   }
-  programmatic_users = [
-    "terraform-cloud"
-  ]
 }
 
 resource "aws_iam_account_password_policy" "strict" {
