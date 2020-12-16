@@ -111,10 +111,10 @@ data "aws_iam_policy_document" "instance_assume_role" {
   }
 }
 
-# resource "aws_iam_instance_profile" "ian_homepage" {
-#   name = "ian-homepage"
-#   role = aws_iam_role.ian_homepage.name
-# }
+resource "aws_iam_instance_profile" "ian_homepage" {
+  name = "ian-homepage"
+  role = aws_iam_role.ian_homepage.name
+}
 
 # resource "aws_iam_role_policy_attachment" "ian_homepage_amazon_s3_access" {
 #   role       = aws_iam_role.ian_homepage.name
