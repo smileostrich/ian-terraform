@@ -10,6 +10,14 @@ locals {
   }
 }
 
+output "aws_iam_sysadmin_arn" {
+  value = aws_iam_user.sysadmins.*.arn
+}
+
+output "aws_iam_programmatic_arn" {
+  value = aws_iam_user.programmatic_users.*.arn
+}
+
 resource "aws_iam_account_password_policy" "strict" {
   allow_users_to_change_password = true
   minimum_password_length        = 14
