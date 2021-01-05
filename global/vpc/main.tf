@@ -93,7 +93,7 @@ resource "aws_subnet" "public" {
 }
 
 # Private Subnet
-resource "aws_subnet" "PR-TEST-PRISUB" {
+resource "aws_subnet" "private" {
   count             = length(var.aws_private_subnets)
   cidr_block        = var.aws_private_subnets[count.index]
   vpc_id            = aws_vpc.main.id
