@@ -5,7 +5,7 @@ terraform {
   backend "remote" {
       organization = "ian"
       workspaces {
-          name = "ian-terraform"
+          name = "ian-terraform-global"
       }
   }
   required_providers {

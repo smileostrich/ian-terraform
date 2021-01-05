@@ -5,7 +5,7 @@ terraform {
   backend "remote" {
     organization = "ian"
     workspaces {
-        name = "ian_global_config"
+        name = "ian-terraform-vpc"
     }
   }
   required_providers {
