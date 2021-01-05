@@ -3,10 +3,10 @@ terraform {
   required_version = "= 0.13.5"
   
   backend "remote" {
-      organization = "ian"
-      workspaces {
-          name = "ian-terraform"
-      }
+    organization = "ian"
+    workspaces {
+        name = "ian_global_config"
+    }
   }
   required_providers {
     aws = {
