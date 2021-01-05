@@ -65,9 +65,9 @@ resource "aws_iam_access_key" "sysadmins" {
   pgp_key = "keybase:${each.value.keybase_id}"
 }
 
-# output "iam_secrets" {
-#   value = aws_iam_user_login_profile.sysadmins.*.encrypted_password
-# }
+output "iam_secrets" {
+  value = aws_iam_user_login_profile.sysadmins.*.encrypted_password
+}
 locals {
   iam_secrets = {
     for key in aws_iam_access_key.sysadmins :
