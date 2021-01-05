@@ -17,7 +17,7 @@ module "vpc" {
   aws_region          = local.region
   aws_azs             = ["ap-northeast-2a", "ap-northeast-2c"]
   
-  global_tags = {
+  tags = {
     Terraform   = "true"
     Environment = "dev"
   }
