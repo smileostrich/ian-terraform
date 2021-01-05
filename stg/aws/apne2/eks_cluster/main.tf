@@ -9,7 +9,7 @@ locals {
 # VPC #
 #######
 module "vpc" {
-  source = "https://github.com/smileostrich/ian-terraform/tree/main/global/vpc"
+  source = "github.com/smileostrich/ian-terraform/global/vpc"
   aws_vpc_name        = "stg-apne2"
   aws_vpc_cidr        = "10.0.0.0/16"
   aws_public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
