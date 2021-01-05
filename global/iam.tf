@@ -76,9 +76,9 @@ locals {
     }
   }
 }
-output "iam_secrets" {
-  value = aws_iam_user_login_profile.sysadmins.*.encrypted_password
-}
+# output "iam_secrets" {
+#   value = aws_iam_user_login_profile.sysadmins.*.encrypted_password
+# }
 
 #
 # IAM Users
