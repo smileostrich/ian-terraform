@@ -1,6 +1,6 @@
 # # terraform tutorial + 서적(terraform up & running) + 강의 참고
 terraform {
-  required_version = "= 0.13.5"
+  required_version = ">= 0.14.3, <0.15"
   
   backend "remote" {
     organization = "ian"
