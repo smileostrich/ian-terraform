@@ -9,7 +9,8 @@ global IAM(not module)
 ```
 ### Usage
 ```
-terraform init
+$ terraform init
+$ terraform output encrypted_aws_iam_secrets
 ```
 
 
