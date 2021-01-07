@@ -30,5 +30,5 @@ VPC를 위한 모듈
 * NAT Gateway(EIP) 1개
 * Internet Gateway, NAT Gateway에 Subnet을 연결하는 Route Table, Route Table Association 
 
-## Refrence
+## Reference
 * terraformrc : https://sysadmin.atlassian.net/wiki/spaces/sysadmin/pages/686555222/terraform+2018
