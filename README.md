@@ -34,8 +34,3 @@ VPC를 위한 모듈
 ## VPC(for EKS)
 apne2 eks VPC
 ### Folder
-
-
-
-## Reference
-* terraformrc : https://sysadmin.atlassian.net/wiki/spaces/sysadmin/pages/686555222/terraform+2018
