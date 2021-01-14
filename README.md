@@ -6,6 +6,11 @@ global IAM(not module)
 ```
 .\global
 |-- global
+|  |-- base.tf
+|  |-- every-policy.tf
+|  |-- iam.tf
+|  |-- output.tf
+|  |-- variable.tf
 ```
 ### Usage
 ```
@@ -21,6 +26,9 @@ VPC를 위한 모듈
 .\global\vpc
 |-- global
 |  |-- vpc
+|  |  |-- main.tf
+|  |  |-- output.tf
+|  |  |-- variable.tf
 ```
 ### Resource
 * VPC
@@ -34,3 +42,10 @@ VPC를 위한 모듈
 ## VPC(for EKS)
 apne2 eks VPC
 ### Folder
+```
+.\stg\aws\apne2\eks_cluster\
+|-- eks_cluster
+|  |-- base.tf
+|  |-- main.tf
+|  |-- variable.tf
+```
