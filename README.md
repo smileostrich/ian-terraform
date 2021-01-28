@@ -40,7 +40,7 @@ VPC를 위한 모듈
 
 
 ## VPC(for EKS)
-apne2 eks VPC (By using vpc module)
+aws apne2 eks VPC (By using vpc module)
 ### Folder
 ```
 .\stg\aws\apne2\eks_cluster\
