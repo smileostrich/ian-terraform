@@ -5,7 +5,7 @@ global IAM(not module)
 ### Folder
 ```
 .\global
-|-- global
+|-- global\
 |  |-- base.tf
 |  |-- every-policy.tf
 |  |-- iam.tf
@@ -23,7 +23,7 @@ $ terraform output encrypted_aws_iam_secrets
 VPC를 위한 모듈
 ### Folder
 ```
-.\global\vpc
+.\global\vpc\
 |-- global
 |  |-- vpc
 |  |  |-- main.tf
